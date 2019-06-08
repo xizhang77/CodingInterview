@@ -8,6 +8,9 @@
 '''
 
 # Solution 1: Recursive
+# Time: O(2^n)
+# N is the height of tree and we need to traversal every node in the tree.
+
 class Solution1(object):
     def fib(self, N):
         """
