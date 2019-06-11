@@ -17,6 +17,7 @@
 #         self.val = x
 #         self.next = None
 
+# Time: ((n-1)*O(1) + O(n))/n ~= O(1)
 class Solution(object):
     def deleteNode(self, head, node):
         """
