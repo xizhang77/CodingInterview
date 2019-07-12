@@ -10,17 +10,10 @@
 '''
 
 class Solution(object):
-    def compare(self, num1, num2):
-        num1, num2 = str(num1), str(num2)
-        if int( num1 + num2 ) > int( num2 + num1 ):
-            return True
-        else:
-            return False
-        
     def solver(self, nums):
         if not nums:
             return [ ]
-        target = nums[0]
+        target = str( nums[0] )
         first = []
         last = []
         same = 1
@@ -28,13 +21,12 @@ class Solution(object):
             if target == num:
                 same += 1
                 continue
-            if self.compare( target, num ):
-                first.append( num )
-            else:
+            if target + str(num) < str(num) + target:
                 last.append( num )
-        return self.solver( first ) + [ str(target) ]*same + self.solver( last )
+            else:
+                first.append( num )
+        return self.solver( first ) + [ target ]*same + self.solver( last )
             
-        
     def smallestNumber(self, nums):
         """
         :type nums: List[int]
